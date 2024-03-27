@@ -20,7 +20,7 @@ body {
   justify-content: center; /* Centers children vertically */
   width: 100%;
   height: 100vh;
-  background-color: #050B35;
+  background-color: #111;
 }
 
 .reload {
@@ -156,12 +156,12 @@ a.collision {
     border: none;
     outline: none;
     color: #fff;
-    background: #050B35;
+    background: #111;
     cursor: pointer;
     position: relative;
     z-index: 0;
     border-radius: 10px;
-	  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .glow-on-hover:before {
@@ -176,13 +176,13 @@ a.collision {
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
-    opacity: 1;
+    opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color: #050B35
+    color: #000
 }
 
 .glow-on-hover:active:after {
@@ -199,7 +199,7 @@ a.collision {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #050B35;
+    background: #111;
     left: 0;
     top: 0;
     border-radius: 10px;
