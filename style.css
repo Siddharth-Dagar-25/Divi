@@ -1,0 +1,212 @@
+:root {
+  --dark-blue: #1c0c33;
+  --hot-pink: #fa243c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Aligns children vertically */
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+}
+
+.reload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  z-index: 1000;
+  font-family: "Open Sans", sans-serif;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.page {
+  opacity: 1;
+  color: #fff;
+  font-size: 7vh;
+  font-family: "Pier Sans", sans-serif;
+  text-align: center;
+  margin-bottom: 20px; /* Adjust space between text and button */
+}
+
+.loader {
+  opacity: 1; /* Set to 0 in production unless loader is active */
+  z-index: 6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#menu-icon {
+  stroke: blue;
+  width: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.reveal {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+a.collision {
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	display: block;
+	height: 70px;
+	width: 200px;
+	overflow: hidden;
+	line-height: 70px;
+	text-align: center;
+	position: relative;
+  }
+  
+  a.collision::before,
+  a.collision::after {
+	position: absolute;
+	content: '';
+	width: 20px;
+	height: 20px;
+	background: var(--hot-pink);
+	top: 50%;
+	border-radius: 50%;
+	z-index: -1;
+  }
+  
+  a.collision::before {
+	transform: translate(-50%, -50%);
+	left: -20px;
+  }
+  
+  a.collision::after {
+	transform: translate(50%, -50%);
+	right: -20px;
+  }
+  
+  a.collision:hover::before {
+	animation: move-left .8s both;
+	animation-direction: alternate;
+  }
+  a.collision:hover::after {
+	animation: move-right .8s both;
+	animation-direction: alternate;
+  }
+  
+  @keyframes move-left {
+	0% {
+	  left: -20px;
+	}
+	50% {
+	  left: 50%;
+	  width: 20px;
+	  height: 20px;
+	}
+	100% {
+	  left: 50%;
+	  height: 400px;
+	  width: 400px;
+	}
+  }
+  
+  @keyframes move-right {
+	0% {
+	  right: -20px;
+	}
+	50% {
+	  right: 50%;
+	  width: 20px;
+	  height: 20px;
+	}
+	100% {
+	  right: 50%;
+	  height: 400px;
+	  width: 400px;
+	}
+  }
+
+  
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+	margin-top: 20px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
