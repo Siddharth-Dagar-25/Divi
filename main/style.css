@@ -37,3 +37,22 @@ svg.bi.bi-arrow-up-square-fill {
     color: white;
     margin-left: -78px;
 }
+input.form-control.me-2 {
+    background-color: #53555d9e;
+}
+.threediv{
+    height:100vh;
+    position: relative;
+    /* display: flex;
+    margin-top: 20vh;
+    justify-content: center; */
+}
+.threediv .row {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    left: 0%;
+    right: 0%;
+}
